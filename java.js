@@ -107,5 +107,14 @@ console.log(determineWinner(playerChoice, computerChoice))
 
 
  } 
-console.log(prompt);
- playGame()
+
+
+ const game = (func, n) => {
+    for (let i = 1; i <= n; i++ ) {
+        func()
+    }
+ }
+     
+    game(playGame, 5)
+ 
+
