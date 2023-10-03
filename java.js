@@ -1,46 +1,63 @@
 
-//user can choose write either rock paper scissors choices
-//make a prompt that asks for a choice
 
-let choices = ['Rock, Paper or Scisors'];
 
-function getComputerChoice() {
 
-return choices[Math.floor(Math.random() * 3  )];
+// get user choice
+function getUserChoice(userInput)  {
+
+  userInput = userInput.toLowerCase();
+
+    if(userInput === 'rock' || 
+        userInput === 'paper' || 
+        userInput === 'scissors') {
+        
+
+        return userInput
+    } else {
+        return 'Wrong you need to type Rock, Paper or Scissors'
+    }
+
 
 }
 
-function playRound(playerChoice, computerChoice) {
 
 
-    
-}
-
-
-
-function determineWinner(playerChoice, computerChoice) {
-
-if (playerChoice === computerChoice) 
-
-return 'TIE!';
-
-} 
-
-else if (playerChoice === 'Rock' && computerChoice === 'Scissors')  ||
-            
-            (playerChoice === 'Paper' && computerChoice === 'Rock') || 
-            
-            (playerChoice === 'Scissors' && computerChoice === 'Paper')
-
-      return  "You win!";
-    
-
-
-    else 
-         return 'Computer wins!'
-    
-    
 
 
  
+//get computer choice
 
+function getComputerChoice() {
+
+    const randomNumber = (Math.floor(Math.random() * 3));
+
+    switch (randomNumber) {
+
+        case 0: 
+            return "rock";
+            case 1:
+                return "paper" ;
+                case 2:
+                    return 'scissors';
+
+
+
+
+    }
+
+
+
+
+}
+
+console.log(getComputerChoice());
+
+        
+
+
+            
+// determine winner
+
+
+
+// make the game work, playGame
