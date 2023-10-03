@@ -45,12 +45,7 @@ function getComputerChoice() {
 
     }
 
-
-
-
 }
-
-console.log(getComputerChoice());
 
         
 
@@ -59,5 +54,47 @@ console.log(getComputerChoice());
 // determine winner
 
 
+function determineWinner(playerChoice, computerChoice) {
+
+if(playerChoice === computerChoice) {
+
+return 'It is a TIE'
+
+}
+
+if( playerChoice === 'rock' && computerChoice === 'scissors' ||
+    playerChoice === 'scissors' && computerChoice === 'paper' ||
+    playerChoice === 'paper' && computerChoice === 'rock' ) {
+
+   return 'You win'
+
+    } else {
+
+        return 'You lose'
+
+    }
+
+
+}
+
+
+
+
+
+
 
 // make the game work, playGame
+ function playGame() {
+
+const  playerChoice = getUserChoice('rock');
+const  computerChoice = getComputerChoice();
+
+console.log('You threw ' + playerChoice)
+console.log('The comp threw ' + computerChoice)
+console.log(determineWinner(playerChoice, computerChoice))
+
+
+
+ } 
+
+ playGame()
