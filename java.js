@@ -9,12 +9,13 @@ function getUserChoice(userInput)  {
 
     if(userInput === 'rock' || 
         userInput === 'paper' || 
-        userInput === 'scissors') {
+        userInput === 'scissors' ||
+        userInput === 'bomb') {
         
 
         return userInput
     } else {
-        return 'Wrong you need to type Rock, Paper or Scissors'
+        return 'Wrong you need to type Rock, Paper, Scissors or Bomb'
     }
 
 
@@ -29,7 +30,7 @@ function getUserChoice(userInput)  {
 
 function getComputerChoice() {
 
-    const randomNumber = (Math.floor(Math.random() * 3));
+    const randomNumber = (Math.floor(Math.random() * 4));
 
     switch (randomNumber) {
 
@@ -39,7 +40,7 @@ function getComputerChoice() {
                 return "paper" ;
                 case 2:
                     return 'scissors';
-
+                    
 
 
 
@@ -61,6 +62,14 @@ if(playerChoice === computerChoice) {
 return 'It is a TIE'
 
 }
+if(playerChoice === 'bomb' && computerChoice === 'scissors' || 'rock' || 'paper') {
+
+    return 'you win'
+} 
+
+
+
+
 
 if( playerChoice === 'rock' && computerChoice === 'scissors' ||
     playerChoice === 'scissors' && computerChoice === 'paper' ||
@@ -68,11 +77,13 @@ if( playerChoice === 'rock' && computerChoice === 'scissors' ||
 
    return 'You win'
 
-    } else {
+    }  else {
 
         return 'You lose'
 
     }
+  
+    
 
 
 }
@@ -86,7 +97,7 @@ if( playerChoice === 'rock' && computerChoice === 'scissors' ||
 // make the game work, playGame
  function playGame() {
 
-const  playerChoice = getUserChoice('rock');
+const  playerChoice = getUserChoice(prompt('TYpe rock paper'));
 const  computerChoice = getComputerChoice();
 
 console.log('You threw ' + playerChoice)
@@ -96,5 +107,5 @@ console.log(determineWinner(playerChoice, computerChoice))
 
 
  } 
-
+console.log(prompt);
  playGame()
