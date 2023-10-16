@@ -25,7 +25,8 @@ compText.textContent = `Computer: ${computer}`
 allResult.textContent = determineWinner();
 playerScore.textContent =  `Player Score: ${playerScores}`;
 compScore.textContent = `Computer Score: ${compScores}`;
-
+playerText.style.color = 'red';
+compText.style.color = 'blue';
 
 })
 

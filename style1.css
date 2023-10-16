@@ -36,16 +36,28 @@ font-size: 60px;
 border-bottom: 5px dotted rgb(255, 0, 0);
 
 }
-
-#btn {
-
-    padding: 15px 15px;
-    margin: 15px;
-    width: 100px;
-    cursor: pointer;
+#h1 h1 span {
+color: rgb(15, 15, 255);
 
 }
 
+
+#btn {
+   
+    padding: 15px 15px;
+    margin: 30px 80px;
+    width: 100px;
+    cursor: pointer;
+    background: white;
+    outline: 0;
+    border: 0;
+    color: white;
+}
+
+#btn img{
+
+    width: 200px;
+}
 
 label {
 
