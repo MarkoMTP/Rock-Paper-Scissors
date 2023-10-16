@@ -1,30 +1,26 @@
-const input = document.querySelector('#input');
+const inputResult = document.querySelector('#input');
+const choiceBtns = document.querySelectorAll('#btn');
+const playerText = document.querySelector('#player');
+const compText = document.querySelector('#comp')
 
-const rockBtn = document.querySelector('rock');
-const paperBtn = document.querySelector('paper')
-const scissorsBtn = document.querySelector('scissors')
-
-const para = document.querySelector('p');
-const game = document.querySelector('game');
-
-
-input.value = '';
+let player;
+let computer;
+let result;
 
 
 
-
-
-const rock = rockBtn.addEventListener('click', () => {
-input.value = 'rock';
-game.appendChild(input)
-
-
-})  
+choiceBtns.forEach(button => button.addEventListener('click', => {
+        player = button.textContent;
+        getComputerChoice();
+        playerText.textContent = `Player: ${player}`;
+        compText.textContent = `Computer: ${computer}`;
+        inputResult.textContent = determineWinner();
+    })
+)
 
 
 
 
- 
 //get computer choice
 
 function getComputerChoice() {
@@ -34,12 +30,15 @@ function getComputerChoice() {
     switch (randomNumber) {
 
         case 0: 
-            return "rock";
+            computer = 'rock'
+            break;
             case 1:
-                return "paper" ;
+                computer = "paper" ;
+                break ;
                 case 2:
-                    return 'scissors';
-    }
+                    computer = 'scissors';
+                        break;
+                }
 
 }
 
@@ -51,9 +50,9 @@ function getComputerChoice() {
 // determine winner
 
 
-function determineWinner(playerChoice, computerChoice) {
+function determineWinner(player, computer) {
 
-if(playerChoice === computerChoice) {
+if(player === computer) {
 
 return 'It is a TIE'
 
@@ -64,9 +63,9 @@ return 'It is a TIE'
 
 
 
-if( playerChoice === 'rock' && computerChoice === 'scissors' ||
-    playerChoice === 'scissors' && computerChoice === 'paper' ||
-    playerChoice === 'paper' && computerChoice === 'rock' ) {
+if(player === 'rock' && computer === 'scissors' ||
+player === 'scissors' && computer === 'paper' ||
+player  === 'paper' && computer === 'rock' ) {
 
    return 'You win'
 
