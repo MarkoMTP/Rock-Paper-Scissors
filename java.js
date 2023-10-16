@@ -1,23 +1,22 @@
-const inputResult = document.querySelector('#input');
+const allResult = document.querySelector('#result');
 const choiceBtns = document.querySelectorAll('#btn');
 const playerText = document.querySelector('#player');
 const compText = document.querySelector('#comp')
 
 let player;
-let computer;
+let computer = '';
 let result;
 
 
 
-choiceBtns.forEach(button => button.addEventListener('click', => {
+choiceBtns.forEach(button => button.addEventListener('click', () => {
         player = button.textContent;
         getComputerChoice();
         playerText.textContent = `Player: ${player}`;
         compText.textContent = `Computer: ${computer}`;
-        inputResult.textContent = determineWinner();
+        allResult.textContent = determineWinner();
     })
 )
-
 
 
 
@@ -25,18 +24,18 @@ choiceBtns.forEach(button => button.addEventListener('click', => {
 
 function getComputerChoice() {
 
-    const randomNumber = (Math.floor(Math.random() * 3));
+    const randomNumber = (Math.floor(Math.random() * 3) + 1);
 
     switch (randomNumber) {
 
-        case 0: 
-            computer = 'rock'
+        case 1: 
+            computer = 'ROCK'
             break;
-            case 1:
-                computer = "paper" ;
+            case 2:
+                computer = "PAPER" ;
                 break ;
-                case 2:
-                    computer = 'scissors';
+                case 3:
+                    computer = 'SCISSORS';
                         break;
                 }
 
@@ -50,32 +49,28 @@ function getComputerChoice() {
 // determine winner
 
 
-function determineWinner(player, computer) {
+function determineWinner() {
 
-if(player === computer) {
+if(player == computer) {
 
 return 'It is a TIE'
 
 }
 
+else if(  computer == 'SCISSORS') {
+    return ( player == 'ROCK')  ?  'You Win' : 'You Lose';
+}
 
-
-
-
-
-if(player === 'rock' && computer === 'scissors' ||
-player === 'scissors' && computer === 'paper' ||
-player  === 'paper' && computer === 'rock' ) {
-
-   return 'You win'
-
-    }  else {
-
-        return 'You lose'
-
-    }
   
     
+else if(  computer == 'PAPER') {
+    return ( player == 'SCISSORS')  ?  'You Win' : 'You Lose';
+}
+
+else if(  computer == 'ROCK') {
+    return ( player == 'PAPER')  ?  'You Win' : 'You Lose';
+}
+
 
 
 }
@@ -86,22 +81,4 @@ player  === 'paper' && computer === 'rock' ) {
 
 
 
-// make the game work, playGame
- function playGame() {
-
-const  playerChoice = getUserChoice();
-const  computerChoice = getComputerChoice();
-
-para.textContent = 'You threw ' + playerChoice ;
-para.textContent = 'The comp threw ' + computerChoice;
-input.value = determineWinner(playerChoice, computerChoice);
-  alert('You threw ' + playerChoice + ' and the computer threw ' + computerChoice )
-  
-alert(determineWinner())
-
-
- } 
-
-
- 
 
