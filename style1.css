@@ -3,7 +3,7 @@
 body {
 
 
-background: rgb(231, 231, 231);
+background: rgb(190, 186, 186);
 
 }
 *{
@@ -15,7 +15,8 @@ background: rgb(231, 231, 231);
 }
 
 .game {
-
+    border: 0.25cm red solid;
+    background: white;
    margin: auto; 
   height: 100dvh;
     width: 100dvh ;
@@ -27,12 +28,12 @@ gap: 40px
 ;
 }
 
-#h1 {
+#h1 h1 {
 
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-weight: 600;
-font-size: 70px;
-border-bottom: 5px dotted black;
+font-family: fantasy;
+
+font-size: 60px;
+border-bottom: 5px dotted rgb(255, 0, 0);
 
 }
 
@@ -41,7 +42,7 @@ border-bottom: 5px dotted black;
     padding: 15px 15px;
     margin: 15px;
     width: 100px;
-
+    cursor: pointer;
 
 }
 
@@ -66,6 +67,19 @@ outline: 0;
     font-size: 30px;
     padding: 10px;
     margin: 26px;
+
+}
+
+#score h1 {
+font-size: 20px;
+font-style: italic;
+
+
+}
+
+#score label {
+font-size: 25px;
+    font-weight: 600;
 
 }
 
