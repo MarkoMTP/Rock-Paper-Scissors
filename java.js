@@ -1,26 +1,25 @@
+const input = document.querySelector('#input');
+
+const rockBtn = document.querySelector('rock');
+const paperBtn = document.querySelector('paper')
+const scissorsBtn = document.querySelector('scissors')
+
+const para = document.querySelector('p');
+const game = document.querySelector('game');
+
+
+input.value = '';
 
 
 
 
-// get user choice
-function getUserChoice(userInput)  {
 
-  userInput = userInput.toLowerCase();
-
-    if(userInput === 'rock' || 
-        userInput === 'paper' || 
-        userInput === 'scissors' ||
-        userInput === 'bomb') {
-        
-
-        return userInput
-    } else {
-        return 'Wrong you need to type Rock, Paper, Scissors or Bomb'
-    }
+const rock = rockBtn.addEventListener('click', () => {
+input.value = 'rock';
+game.appendChild(input)
 
 
-}
-
+})  
 
 
 
@@ -30,7 +29,7 @@ function getUserChoice(userInput)  {
 
 function getComputerChoice() {
 
-    const randomNumber = (Math.floor(Math.random() * 4));
+    const randomNumber = (Math.floor(Math.random() * 3));
 
     switch (randomNumber) {
 
@@ -40,15 +39,12 @@ function getComputerChoice() {
                 return "paper" ;
                 case 2:
                     return 'scissors';
-                    
-
-
-
     }
 
 }
 
         
+
 
 
             
@@ -62,10 +58,7 @@ if(playerChoice === computerChoice) {
 return 'It is a TIE'
 
 }
-if(playerChoice === 'bomb' && computerChoice === 'scissors' || 'rock' || 'paper') {
 
-    return 'you win'
-} 
 
 
 
@@ -97,24 +90,19 @@ if( playerChoice === 'rock' && computerChoice === 'scissors' ||
 // make the game work, playGame
  function playGame() {
 
-const  playerChoice = getUserChoice(prompt('TYpe rock paper'));
+const  playerChoice = getUserChoice();
 const  computerChoice = getComputerChoice();
 
-console.log('You threw ' + playerChoice)
-console.log('The comp threw ' + computerChoice)
-console.log(determineWinner(playerChoice, computerChoice))
-
+para.textContent = 'You threw ' + playerChoice ;
+para.textContent = 'The comp threw ' + computerChoice;
+input.value = determineWinner(playerChoice, computerChoice);
+  alert('You threw ' + playerChoice + ' and the computer threw ' + computerChoice )
+  
+alert(determineWinner())
 
 
  } 
 
 
- const game = (func, n) => {
-    for (let i = 1; i <= n; i++ ) {
-        func()
-    }
- }
-     
-    game(playGame, 5)
  
 

@@ -1,0 +1,61 @@
+
+
+body {
+
+
+background: rgb(231, 231, 231);
+
+}
+*{
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.game {
+
+   margin: auto; 
+  height: 100dvh;
+    width: 100dvh ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+flex-direction: column;
+gap: 40px
+;
+}
+
+h1 {
+
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-weight: 600;
+font-size: 70px;
+border-bottom: 5px dotted black;
+
+}
+
+#btn {
+
+    padding: 15px 15px;
+    margin: 15px;
+    width: 100px;
+
+
+}
+
+
+label {
+
+padding: 15px;
+font-size: 20px;
+margin: 10px;
+
+}
+
+input{
+padding: 20px;
+    border: 0;
+outline: 0;
+}
